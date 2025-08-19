@@ -1,0 +1,269 @@
+/* Importaciones de Angular Material */
+@import '@angular/material/prebuilt-themes/purple-green.css';
+
+/* Reset y estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Animaciones globales */
+.fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Loader personalizado */
+.custom-loader {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none !important;
+  }
+
+  .mobile-full-width {
+    width: 100% !important;
+  }
+}
+
+/* Material Design enhancements */
+.mat-elevation-z8 {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.gradient-background {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Snackbar customizations */
+.success-snackbar {
+  --mdc-snackbar-container-color: #4caf50 !important;
+  --mdc-snackbar-supporting-text-color: #ffffff !important;
+}
+
+.error-snackbar {
+  --mdc-snackbar-container-color: #f44336 !important;
+  --mdc-snackbar-supporting-text-color: #ffffff !important;
+}
+
+/* Improved contrast for Material components */
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  color: #ffffff !important;
+}
+
+.mat-mdc-snack-bar-container.success-snackbar .mdc-snackbar__surface {
+  background-color: #4caf50 !important;
+  color: #ffffff !important;
+}
+
+.mat-mdc-snack-bar-container.error-snackbar .mdc-snackbar__surface {
+  background-color: #f44336 !important;
+  color: #ffffff !important;
+}
+
+/* Card hover effects */
+.mat-mdc-card:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+/* Button improvements */
+.mat-mdc-raised-button {
+  text-transform: none;
+  font-weight: 500;
+}
+
+/* Form field improvements */
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline {
+  color: rgba(0, 0, 0, 0.12);
+}
+
+/* Scrollbar customization */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Additional modern enhancements */
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-outline {
+  border-radius: 12px;
+}
+
+.mat-mdc-form-field-appearance-outline.mat-focused .mat-mdc-form-field-outline-thick {
+  border-width: 2px;
+}
+
+.mat-mdc-button {
+  border-radius: 8px;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.mat-mdc-fab {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.mat-mdc-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Glass morphism effects */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+}
+
+/* Smooth transitions */
+* {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Focus outline improvements */
+*:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Text contrast improvements */
+.mat-mdc-form-field-appearance-outline .mat-mdc-form-field-label {
+  color: #4a5568 !important;
+}
+
+.mat-mdc-form-field-appearance-outline.mat-focused .mat-mdc-form-field-label {
+  color: #667eea !important;
+}
+
+.mat-mdc-input-element {
+  color: #2d3748 !important;
+}
+
+.mat-mdc-input-element::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Button text contrast */
+.mat-mdc-button, .mat-mdc-raised-button, .mat-mdc-outlined-button {
+  font-weight: 500 !important;
+}
+
+.mat-mdc-raised-button:not([disabled]) {
+  color: #ffffff !important;
+}
+
+/* Card text improvements */
+.mat-mdc-card-title {
+  color: #1f2937 !important;
+}
+
+.mat-mdc-card-subtitle {
+  color: #6b7280 !important;
+}
+
+.mat-mdc-card-content {
+  color: #374151 !important;
+}
+
+/* Ensure good contrast for all text elements */
+h1, h2, h3, h4, h5, h6 {
+  color: #1f2937;
+  font-weight: 600;
+}
+
+p {
+  color: #374151;
+  line-height: 1.6;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .modern-card {
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+  }
+  
+  .feature-item {
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+  }
+  
+  .credential-value {
+    border: 2px solid #000000 !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}
