@@ -94,7 +94,7 @@ import { LoginCredentials } from '../../models/interfaces';
                   <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
                 <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
-                  La contraseña es obligatoria
+                  Ingresa la coontraseña
                 </mat-error>
                 <mat-error *ngIf="loginForm.get('password')?.hasError('minlength')">
                   La contraseña debe tener al menos 6 caracteres
