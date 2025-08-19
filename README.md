@@ -223,8 +223,7 @@ Este proyecto fue desarrollado como prueba técnica para **Comercializadora de S
 
 ## 📞 Contacto
 
-Para consultas técnicas o demostración del proyecto, contactar al desarrollador.
-
+**Email:** Jaderdanielmejia18@gmail.com
 ---
 
-**Desarrollado con ❤️ usando Angular 15+ y Angular Material**
+**Desarrollado Por Jader Daniel Mejia Castro**
