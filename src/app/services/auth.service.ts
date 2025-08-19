@@ -11,7 +11,7 @@ export class AuthService {
   private readonly API_URL = 'https://fakestoreapi.com';
   private readonly TOKEN_KEY = 'auth_token';
   private readonly USER_KEY = 'auth_user';
-  
+
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
   private currentUserSubject = new BehaviorSubject<User | null>(null);
 
@@ -29,7 +29,7 @@ export class AuthService {
   private checkStoredAuth(): void {
     const token = localStorage.getItem(this.TOKEN_KEY);
     const userStr = localStorage.getItem(this.USER_KEY);
-    
+
     if (token && userStr) {
       try {
         const user = JSON.parse(userStr);
@@ -49,9 +49,8 @@ export class AuthService {
       .pipe(
         tap(response => {
           if (response.token) {
-            // Almacenar token y datos de usuario
             localStorage.setItem(this.TOKEN_KEY, response.token);
-            
+
             // Simular datos de usuario (FakeStore API no devuelve user en login)
             const mockUser: User = {
               id: 1,
@@ -74,7 +73,7 @@ export class AuthService {
               },
               phone: '300-123-4567'
             };
-            
+
             localStorage.setItem(this.USER_KEY, JSON.stringify(mockUser));
             this.isAuthenticatedSubject.next(true);
             this.currentUserSubject.next(mockUser);
@@ -87,7 +86,7 @@ export class AuthService {
             const mockResponse: AuthResponse = {
               token: 'demo_token_' + Date.now()
             };
-            
+
             localStorage.setItem(this.TOKEN_KEY, mockResponse.token);
             const mockUser: User = {
               id: 1,
@@ -110,11 +109,11 @@ export class AuthService {
               },
               phone: '300-123-4567'
             };
-            
+
             localStorage.setItem(this.USER_KEY, JSON.stringify(mockUser));
             this.isAuthenticatedSubject.next(true);
             this.currentUserSubject.next(mockUser);
-            
+
             return of(mockResponse);
           }
           throw error;
@@ -122,9 +121,7 @@ export class AuthService {
       );
   }
 
-  /**
-   * Cerrar sesión
-   */
+
   logout(): void {
     this.clearStoredAuth();
     this.isAuthenticatedSubject.next(false);
@@ -160,11 +157,8 @@ export class AuthService {
     return this.currentUserSubject.value;
   }
 
-  /**
-   * Simular registro de usuario (para demo)
-   */
+
   register(userData: any): Observable<AuthResponse> {
-    // En una aplicación real, esto haría una petición POST al endpoint de registro
     return of({
       token: 'demo_token_' + Date.now()
     }).pipe(
@@ -191,7 +185,7 @@ export class AuthService {
           },
           phone: userData.phone || '300-000-0000'
         };
-        
+
         localStorage.setItem(this.USER_KEY, JSON.stringify(mockUser));
         this.isAuthenticatedSubject.next(true);
         this.currentUserSubject.next(mockUser);
